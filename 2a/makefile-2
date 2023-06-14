@@ -1,0 +1,11 @@
+8.out: main.o libvector.a
+        gcc -o 8.out main.o -L. -lvector
+main.o: main.c
+        gcc -c main.c
+libvector.a: vector.o
+        ar r libvector.a vector.o
+vector.o: vector.c
+        gcc -c vector.c
+clean:
+        rm *.o
+        rm *.a

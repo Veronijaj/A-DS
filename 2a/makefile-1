@@ -1,0 +1,11 @@
+8.out: main.o liblist.a
+        gcc -o 8.out main.o -L. -llist
+main.o: main.c
+        gcc -c main.c
+liblist.a: list.o
+        ar r liblist.a list.o
+list.o: list.c
+        gcc -c list.c
+clean:
+        rm -rf  *.a
+        rm -rf *.o
